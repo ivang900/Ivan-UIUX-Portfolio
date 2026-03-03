@@ -82,12 +82,10 @@ const certifications = [
 
 export default function Resume() {
   const handleDownload = () => {
-    // Replace this URL with the actual path to your PDF resume,
-    // e.g., "/Ivan_Gonzalez_Resume.pdf" placed in the /public directory.
-    const pdfPath = "/Ivan_Gonzalez_Resume.pdf";
+    const pdfPath = new URL("../../../assets/Ivan_Gonzalez_2026_Resume_uiux.pdf", import.meta.url).href;
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = "Ivan_Gonzalez_Resume.pdf";
+    link.download = "Ivan_Gonzalez_2026_Resume_uiux.pdf";
     link.click();
   };
 
