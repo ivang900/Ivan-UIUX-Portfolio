@@ -82,7 +82,7 @@ const certifications = [
 
 export default function Resume() {
   const handleDownload = () => {
-    const pdfPath = new URL("../../../assets/Ivan_Gonzalez_2026_Resume_uiux.pdf", import.meta.url).href;
+    const pdfPath = new URL("../../assets/Ivan_Gonzalez_2026_Resume_uiux.pdf", import.meta.url).href;
     const link = document.createElement("a");
     link.href = pdfPath;
     link.download = "Ivan_Gonzalez_2026_Resume_uiux.pdf";

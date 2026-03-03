@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import resumePdf from "../../assets/Ivan_Gonzalez_2026_Resume_uiux.pdf";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,16 +58,13 @@ export function Navigation() {
             >
               About
             </button>
-            <Link
-              to="/resume"
-              className={
-                isActive("/resume")
-                  ? `${activeLinkClass} border border-[#0EA5E9] px-4 py-1.5 rounded-lg`
-                  : `${navLinkClass} border border-gray-300 px-4 py-1.5 rounded-lg hover:border-[#0EA5E9]`
-              }
+            <a
+              href={resumePdf}
+              download="Ivan_Gonzalez_2026_Resume_uiux.pdf"
+              className={`${navLinkClass} border border-gray-300 px-4 py-1.5 rounded-lg hover:border-[#0EA5E9]`}
             >
-              Resume
-            </Link>
+              Click to Download My Resume
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,17 +96,14 @@ export function Navigation() {
               >
                 About
               </button>
-              <Link
-                to="/resume"
+              <a
+                href={resumePdf}
+                download="Ivan_Gonzalez_2026_Resume_uiux.pdf"
                 onClick={() => setMobileMenuOpen(false)}
-                className={
-                  isActive("/resume")
-                    ? "text-sm text-[#0EA5E9] text-left"
-                    : "text-sm text-gray-700 hover:text-[#0EA5E9] transition-colors text-left"
-                }
+                className="text-sm text-gray-700 hover:text-[#0EA5E9] transition-colors text-left"
               >
                 Resume
-              </Link>
+              </a>
             </div>
           </div>
         )}
